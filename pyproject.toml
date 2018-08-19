@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "structlogger"
+version = "0.1.3"
+description = "Uses structlog to create two loggers, a stdout logger with key-value args and optional colour, and a file logger in JSON format with log-rotation."
+authors = ["Matt Davis <mattdavis90@googlemail.com>"]
+license = "MIT"
+readme = 'README.rst'
+repository = "https://github.com/mattdavis90/structlogger"
+homepage = "https://github.com/mattdavis90/structlogger"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+structlog = {version = "^18.1", extras = ["dev"]}
+python-json-logger = "^0.1.9"
+
+[tool.poetry.dev-dependencies]
