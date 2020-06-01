@@ -29,6 +29,6 @@ setup(
     package_dir={"": "."},
     package_data={},
     install_requires=[
-        'python-json-logger==0.*,>=0.1.9', 'structlog[dev]==18.*,>=18.1.0'
+        'python-json-logger==0.*,>=0.1.9', 'structlog[dev]==20.*,>=20.1.0'
     ],
 )
