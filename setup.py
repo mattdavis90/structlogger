@@ -15,7 +15,7 @@ if os.path.exists(readme_path):
 setup(
     long_description=readme,
     name='structlogger',
-    version='0.1.3',
+    version='0.1.4',
     description='Uses structlog to create two loggers, a stdout logger with key-value args and optional colour, and a file logger in JSON format with log-rotation.',
     python_requires='==3.*,>=3.6.0',
     project_urls={
