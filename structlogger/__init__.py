@@ -2,9 +2,11 @@ import collections
 import logging
 import logging.config
 import os
+import sys
 import threading
 
 import structlog
+import structlog.contextvars
 from pythonjsonlogger import jsonlogger
 
 __version__ = "v0.1.3"
@@ -53,7 +55,14 @@ def _order_keys(logger, method_name, event_dict):
 def configure_logger(
     log_to_console=True, color_console=True, log_to_file=True, filename=None
 ):
-    pre_chain = [
+    pre_chain = []
+
+    if sys.version_info >= (3, 7):
+        pre_chain += [
+            structlog.contextvars.merge_contextvars,
+        ]
+
+    pre_chain += [
         structlog.stdlib.add_logger_name,
         structlog.stdlib.add_log_level,
         _add_thread_info,
