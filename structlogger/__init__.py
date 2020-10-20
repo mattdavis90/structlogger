@@ -8,7 +8,7 @@ import structlog
 import structlog.contextvars
 from pythonjsonlogger import jsonlogger
 
-__version__ = "v0.1.3"
+__version__ = "v0.1.5"
 
 try:
     import click
