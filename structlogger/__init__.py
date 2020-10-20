@@ -2,7 +2,6 @@ import collections
 import logging
 import logging.config
 import os
-import sys
 import threading
 
 import structlog
@@ -57,7 +56,7 @@ def configure_logger(
 ):
     pre_chain = []
 
-    if sys.version_info >= (3, 7):
+    if structlog.contextvars:
         pre_chain += [
             structlog.contextvars.merge_contextvars,
         ]
